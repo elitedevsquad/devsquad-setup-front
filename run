@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Colors
+NC='\033[0m'
+BBlue='\033[1;34m'
+BRed='\033[1;33m'
+
+function uppercase() {
+    local TEXT=$1
+    echo $(echo $TEXT | tr '[a-z]' '[A-Z]')
+}
+
+echo "\n${BBlue}Installing Husky Hooks on the \".husky\" folder\n${NC}"
+#sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-setup/master/hooks/run)"
+
+echo "\n${BRed}Do you want to create the README template? (Y/y for yes or anything else for no)${NC}"
+read READMETEMPLATE
+READMETEMPLATE=$(uppercase $READMETEMPLATE)
+
+if [ "$READMETEMPLATE" == "Y" ]; then
+    echo "\n${BBlue}Installing README template${NC}"
+    curl -s -o README.md "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup/master/templates/README.md"
+fi
+
+if git remote -v | grep -q 'github'; then
+    echo "\n${BRed}Do you want to create the Pull Request template? (Y/y for yes or anything else for no)${NC}"
+    read PRTEMPLATE
+    PRTEMPLATE=$(uppercase $PRTEMPLATE)
+
+    if [ "$PRTEMPLATE" == "Y" ]; then
+        echo "\n${BBlue}Installing .github pull request template${NC}"
+        curl -s -o .github/pull_request_template.md "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup/master/templates/pull_request_template.md"
+    fi
+fi
+
+echo "\n${BBlue}Installing workspace directory${NC}"
+if [ ! -d './workspace' ]; then
+    mkdir ./workspace
+    echo "*
+!.gitignore" >./workspace/.gitignore
+fi
+
+echo "\n${BBlue}All done! 😎\n${NC}"

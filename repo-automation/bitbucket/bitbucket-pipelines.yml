@@ -1,0 +1,24 @@
+pipelines:
+  default:
+    - step:
+        name: Build Frontend
+        caches:
+          - node
+        image: node:18.12.1
+        script:
+          - ln -sf .env.example .env
+          - npm install
+          - npm run build
+          - npm run lint
+          - npm run style:check
+  branches:
+    '{master,release,develop}':
+      - step:
+          name: Merge in customer repository
+          script:
+            - |
+              if [ $DELIVERY ]; then
+                git remote add $CUSTOMER_REPOSITORY_MANAGER "git@$CUSTOMER_REPOSITORY_MANAGER.com:$CUSTOMER_ORGANIZATION/$CUSTOMER_REPOSITORY.git"
+                git fetch --depth=214748364
+                git push $CUSTOMER_REPOSITORY_MANAGER $BITBUCKET_BRANCH
+              fi

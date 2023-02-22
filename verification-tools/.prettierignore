@@ -1,0 +1,11 @@
+.nuxt/
+.vercel/
+.vscode/
+node_modules/
+static/
+.husky/
+.output/
+coverage/
+.idea
+dist
+bitbucket-pipelines.yml
