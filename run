@@ -11,7 +11,7 @@ function uppercase() {
 }
 
 echo "\n${BBlue}Installing Husky Hooks on the \".husky\" folder\n${NC}"
-#sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-setup/master/hooks/run)"
+sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/hooks/run)"
 
 echo "\n${BRed}Do you want to create the README template? (Y/y for yes or anything else for no)${NC}"
 read READMETEMPLATE
