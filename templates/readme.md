@@ -93,7 +93,7 @@ git checkout -b hotfix/JIRA-123
 git checkout -b bugfix/JIRA-123
 ```
 
-5. Task _(You should use it for tasks like Laravel upgrade)_
+5. Task _(You should use it for tasks like library upgrade)_
 
 ```shell
 git checkout -b task/JIRA-123
