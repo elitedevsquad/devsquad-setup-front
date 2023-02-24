@@ -5,6 +5,10 @@ NC='\033[0m'
 BBlue='\033[1;34m'
 BRed='\033[1;33m'
 
-echo "\n${BRed}Do you want to install the Javascript Quality tools? (Y/y for yes or anything else for no)${NC}"
-read JSPACKAGES
-JSPACKAGES=$(uppercase $JSPACKAGES)
+echo "\n${BBlue}Installing dev dependencies${NC}"
+npm install -D prettier
+
+echo "\n${BBlue}Copying configuration files${NC}"
+echo "\n${BRed}1. Prettier${NC}"
+curl -s -o .prettierignore "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/.prettierignore"
+curl -s -o .prettierrc "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/.prettierrc"
