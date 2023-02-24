@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+      - release/**
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Copy env file
+        run: ln -sf .env.example .env
+
+      - name: Install Node Modules
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run style check
+        run: npm run style:check

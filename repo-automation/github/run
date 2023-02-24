@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Colors
+NC='\033[0m'
+BRed='\033[1;33m'
+
+[ -d ./.github ] || mkdir ./.github
+[ -d ./.github/workflows ] || mkdir ./.github/workflows
+
+echo "\n1. Install .github/workflows/test.yml"
+curl -s -o .github/workflows/test.yml "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/repo-automation/github/test.yml"
