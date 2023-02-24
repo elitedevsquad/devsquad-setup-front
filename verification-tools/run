@@ -5,14 +5,15 @@ NC='\033[0m'
 BBlue='\033[1;34m'
 BRed='\033[1;33m'
 
-echo "\n${BBlue}Installing dev dependencies${NC}"
-npm install -D prettier eslint eslint-config-prettier
+PACKAGES=''
+HASNUXT=$(npm list | grep -q "nuxt")
 
-if npm list | grep -q "nuxt"; then
-    echo "\n${BBlue}Installing nuxt dependencies${NC}"
-    npm install -D eslint-plugin-nuxt eslint-plugin-vue @nuxtjs/eslint-config-typescript
+if [ $HASNUXT ]; then
+    PACKAGES='eslint-plugin-nuxt eslint-plugin-vue @nuxtjs/eslint-config-typescript'
 fi
 
+echo "\n${BBlue}Installing dev dependencies${NC}"
+npm install -D prettier eslint eslint-config-prettier $(echo $PACKAGES)
 
 echo "\n${BBlue}Copying configuration files${NC}"
 echo "\n${BRed}1. Prettier${NC}"
