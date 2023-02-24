@@ -6,8 +6,9 @@ BBlue='\033[1;34m'
 BRed='\033[1;33m'
 
 PACKAGES=''
+ISNUXT=$(npm list | grep -q "nuxt")
 
-if npm list | grep -q "nuxt"; then
+if $ISNUXT; then
     PACKAGES='eslint-plugin-nuxt eslint-plugin-vue @nuxtjs/eslint-config-typescript'
 fi
 
@@ -20,4 +21,8 @@ curl -s -o .prettierignore "https://raw.githubusercontent.com/elitedevsquad/devs
 curl -s -o .prettierrc "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/.prettierrc"
 
 echo "\n${BRed}2. Eslint${NC}"
-curl -s -o .eslintrc.js "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/.eslintrc.js"
+if $ISNUXT; then
+  curl -s -o .eslintrc.js "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/.eslintrc-nuxt.js"
+else
+  curl -s -o .eslintrc.js "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/.eslintrc.js"
+fi
