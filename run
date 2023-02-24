@@ -38,7 +38,8 @@ read JSPACKAGES
 JSPACKAGES=$(uppercase $JSPACKAGES)
 
 if [ "$JSPACKAGES" == "Y" ]; then
-
+  echo "\n${BBlue}Installing quality tools${NC}"
+  sh -c "$(curl -fsSl https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/run)"
 fi
 
 if git remote -v | grep -q 'github'; then
