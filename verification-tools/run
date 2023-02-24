@@ -6,9 +6,8 @@ BBlue='\033[1;34m'
 BRed='\033[1;33m'
 
 PACKAGES=''
-HASNUXT=$(npm list | grep -q "nuxt")
 
-if [ $HASNUXT ]; then
+if npm list | grep -q "nuxt"; then
     PACKAGES='eslint-plugin-nuxt eslint-plugin-vue @nuxtjs/eslint-config-typescript'
 fi
 
