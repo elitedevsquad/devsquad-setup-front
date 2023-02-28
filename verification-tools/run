@@ -28,4 +28,13 @@ else
 fi
 
 echo "\n${BRed}3. Cypress${NC}"
+mkdir "cypress"
+mkdir "cypress/downloads"
+mkdir "cypress/fixtures"
+mkdir "cypress/support"
+
 curl -s -o cypress.config.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress.config.ts"
+curl -s -o cypress/downloads/.gitkeep "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/downloads/.gitkeep"
+curl -s -o cypress/fixtures/example.json "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/fixtures/example.json"
+curl -s -o cypress/support/commands.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/fixtures/support/commands.ts"
+curl -s -o cypress/support/e2e.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/fixtures/support/e2e.ts"
