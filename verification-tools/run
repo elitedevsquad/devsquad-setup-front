@@ -13,7 +13,7 @@ if $ISNUXT; then
 fi
 
 echo "\n${BBlue}Installing dev dependencies${NC}"
-npm install -D prettier eslint eslint-config-prettier $(echo $PACKAGES)
+npm install -D prettier eslint eslint-config-prettier cypress $(echo $PACKAGES)
 
 echo "\n${BBlue}Copying configuration files${NC}"
 echo "\n${BRed}1. Prettier${NC}"
@@ -26,3 +26,6 @@ if $ISNUXT; then
 else
   curl -s -o .eslintrc.js "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/.eslintrc.js"
 fi
+
+echo "\n${BRed}3. Cypress${NC}"
+curl -s -o cypress.config.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress.config.ts"
