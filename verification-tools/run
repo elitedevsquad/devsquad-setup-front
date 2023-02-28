@@ -32,9 +32,13 @@ mkdir "cypress"
 mkdir "cypress/downloads"
 mkdir "cypress/fixtures"
 mkdir "cypress/support"
+mkdir "cypress/videos"
 
 curl -s -o cypress.config.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress.config.ts"
 curl -s -o cypress/downloads/.gitkeep "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/downloads/.gitkeep"
 curl -s -o cypress/fixtures/example.json "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/fixtures/example.json"
 curl -s -o cypress/support/commands.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/support/commands.ts"
 curl -s -o cypress/support/e2e.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/support/e2e.ts"
+
+echo "*
+!.gitignore" > cypress/videos/.gitignore
