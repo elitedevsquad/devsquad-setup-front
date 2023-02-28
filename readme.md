@@ -10,7 +10,7 @@ Run the command bellow and everything will be done automagically
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/run)"
 ```
 
-## Attention
+## ⚠️ Attention
 After running the command, please add these scripts in your `package.json` file:
 
 ```json
@@ -19,7 +19,9 @@ After running the command, please add these scripts in your `package.json` file:
         "style:check": "npx prettier --check .",
         "style:fix": "npx prettier --write .",
         "lint": "eslint --ext .ts,.js,.vue .",
-        "lint:fix": "eslint --fix --ext .ts,.js,.vue ."
+        "lint:fix": "eslint --fix --ext .ts,.js,.vue .",
+        "cy:run": "cypress run",
+        "test": "start-server-and-test dev http://localhost:3000 cy:run"
     }
 }
 ```

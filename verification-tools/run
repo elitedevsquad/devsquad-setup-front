@@ -13,7 +13,7 @@ if $ISNUXT; then
 fi
 
 echo "\n${BBlue}Installing dev dependencies${NC}"
-npm install -D prettier eslint eslint-config-prettier cypress $(echo $PACKAGES)
+npm install -D prettier eslint eslint-config-prettier cypress start-server-and-test $(echo $PACKAGES)
 
 echo "\n${BBlue}Copying configuration files${NC}"
 echo "\n${BRed}1. Prettier${NC}"
@@ -36,11 +36,14 @@ mkdir "cypress/support"
 mkdir "cypress/videos"
 
 curl -s -o cypress.config.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress.config.ts"
-curl -s -o cypress/downloads/.gitkeep "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/downloads/.gitkeep"
 curl -s -o cypress/e2e/example.cy.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/e2e/example.cy.ts"
 curl -s -o cypress/fixtures/example.json "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/fixtures/example.json"
 curl -s -o cypress/support/commands.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/support/commands.ts"
 curl -s -o cypress/support/e2e.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/support/e2e.ts"
+
+echo "\n${BRed}Writing some important files${NC}"
+
+echo "" > cypress/downloads/.gitkeep
 
 echo "*
 !.gitignore" > cypress/videos/.gitignore
