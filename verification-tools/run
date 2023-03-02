@@ -33,7 +33,6 @@ mkdir "cypress/downloads"
 mkdir "cypress/e2e"
 mkdir "cypress/fixtures"
 mkdir "cypress/support"
-mkdir "cypress/videos"
 
 curl -s -o cypress.config.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress.config.ts"
 curl -s -o cypress/e2e/example.cy.ts "https://raw.githubusercontent.com/elitedevsquad/devsquad-setup-front/master/verification-tools/cypress/e2e/example.cy.ts"
@@ -44,6 +43,3 @@ curl -s -o cypress/support/e2e.ts "https://raw.githubusercontent.com/elitedevsqu
 echo "\n${BRed}Writing some important files${NC}"
 
 echo "" > cypress/downloads/.gitkeep
-
-echo "*
-!.gitignore" > cypress/videos/.gitignore
