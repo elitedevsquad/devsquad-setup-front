@@ -25,3 +25,6 @@ After running the command, please add these scripts in your `package.json` file:
     }
 }
 ```
+
+## Post Install
+After the installation, update your `readme.md`
