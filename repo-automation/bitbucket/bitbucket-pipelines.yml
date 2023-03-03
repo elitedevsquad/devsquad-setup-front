@@ -11,6 +11,7 @@ pipelines:
           - npm run build
           - npm run lint
           - npm run style:check
+          - npm run test
   branches:
     '{master,release,develop}':
       - step:
