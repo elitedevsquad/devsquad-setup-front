@@ -30,5 +30,12 @@ if [ $STATUS_CODE -ne 0 ]; then
 fi
 
 # ----------------------------------------------------------------------------------------
-# 4. Tests
-echo "${BBlue}4. Running Tests${NC}"
+# 3. Tests
+echo "${BBlue}3. Running Tests${NC}"
+npm run test
+
+STATUS_CODE=$?
+if [ $STATUS_CODE -ne 0 ]; then
+    echo "${BRed}3.... tests${NC}"
+    exit 1
+fi
