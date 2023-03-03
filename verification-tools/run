@@ -13,7 +13,7 @@ if $ISNUXT; then
 fi
 
 echo "\n${BBlue}Installing dev dependencies${NC}"
-npm install -D prettier eslint eslint-config-prettier cypress start-server-and-test $(echo $PACKAGES)
+npm install -D prettier eslint eslint-config-prettier cypress start-server-and-test eslint-plugin-cypress $(echo $PACKAGES)
 
 echo "\n${BBlue}Copying configuration files${NC}"
 echo "\n${BRed}1. Prettier${NC}"

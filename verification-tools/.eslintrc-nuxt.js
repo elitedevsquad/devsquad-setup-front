@@ -3,10 +3,12 @@ module.exports = {
     root: true,
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
+        "cypress/globals": true
     },
     extends: [
         '@nuxtjs/eslint-config-typescript',
+        "plugin:cypress/recommended",
         'eslint:recommended',
         'plugin:vue/recommended',
         'plugin:nuxt/recommended',
