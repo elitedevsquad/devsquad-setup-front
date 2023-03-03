@@ -54,7 +54,7 @@ npm run dev
 ### Running Tests
 
 ```shell
-
+npm run test
 ```
 
 ### Other Settings
