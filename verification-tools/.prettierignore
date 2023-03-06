@@ -9,3 +9,4 @@ coverage/
 .idea
 dist
 bitbucket-pipelines.yml
+.github
